@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-xs-12">
+    <form class="form-horizontal" role="form">
+      <div class="form-group">
+        <label for="autore-messaggio" class="control-label col-xs-3">Autore:</label>
+        <div class="col-xs-9">
+          <input type="text" class="form-control" ng-model="author" id="autore-messaggio" placeholder="Nome" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="contenuto-messaggio" class="control-label col-xs-3">Messaggio:</label>
+        <div class="col-xs-9">
+          <textarea class="form-control" ng-model="content" id="contenuto-messaggio" placeholder="Nome"></textarea>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-xs-offset-3 col-xs-9">
+          <button ng-click="sendMessage()" class="btn btn-default">Invia</button>
+          <a class="btn btn-danger" ui-sref="messages">Esci</a>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
