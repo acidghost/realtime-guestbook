@@ -6,8 +6,21 @@ var controllers = angular.module('realtime.guestbook.controllers', []);
 
 controllers.controller('ListMessagesCtrl', ['$scope', 'Messages', function($scope, Messages) {
 
-  Messages.query({}, function(datas) {
+  /*
+  Messages.resource.query({}, function(datas) {
     $scope.messages = datas;
+  });
+  */
+  Messages.socket.query(function(messages) {
+    console.log(messages.length + ' messages');
+    $scope.messages = messages;
+    $scope.$apply($scope.messages);
+  });
+
+  io.socket.on('message', function(data) {
+    console.log('New message!');
+    $scope.messages.unshift(data.data);
+    $scope.$apply($scope.messages);
   });
 
 }]);
@@ -23,9 +36,9 @@ controllers.controller('NewMessageCtrl', ['$scope', '$state', '$window', 'Messag
       author: $scope.author,
       content: $scope.content
     };
-    Messages.save(datas, function() {
+    Messages.resource.save(datas, function() {
       datas.createdAt = new Date;
-      $scope.messages.unshift(datas);
+      //$scope.messages.unshift(datas);
       $state.go('messages');
     });
   };

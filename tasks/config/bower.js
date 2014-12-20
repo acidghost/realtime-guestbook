@@ -33,9 +33,6 @@ module.exports = function(grunt) {
               'ui-bootstrap.js',
               'ui-bootstrap-tpls.js'
             ]
-          },
-          'sails.io.js': {
-            files: ['']
           }
         }
       }
