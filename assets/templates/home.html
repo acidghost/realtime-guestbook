@@ -1,3 +1,9 @@
+<div id="send-area" class="row">
+  <div class="col-xs-12">
+    <a ui-sref=".new" class="btn btn-lg btn-primary"><span class="glyphicon glyphicon-globe"></span> Scrivi qualcosa!</a>
+  </div>
+</div>
+
 <div class="row" id="messages-container">
   <div ng-repeat="message in messages" class="col-xs-10 col-xs-offset-1">
     <div class="message-head">
@@ -15,12 +21,6 @@
     <div class="message-content">
       <p>{{ message.content }}</p>
     </div>
-  </div>
-</div>
-
-<div id="send-area" class="row">
-  <div class="col-xs-12">
-    <a ui-sref=".new" class="btn btn-lg btn-primary">Scrivi qualcosa!</a>
   </div>
 </div>
 

@@ -29,7 +29,7 @@ controllers.controller('NewMessageCtrl', ['$scope', '$state', '$window', 'Messag
 
   $scope.author = $scope.content = "";
 
-  $window.scrollTo(0, $window.innerHeight);
+  $window.scrollTo(0, $('body').height());
 
   $scope.sendMessage = function() {
     var datas = {
@@ -40,6 +40,7 @@ controllers.controller('NewMessageCtrl', ['$scope', '$state', '$window', 'Messag
       datas.createdAt = new Date;
       //$scope.messages.unshift(datas);
       $state.go('messages');
+      $window.scrollTo(0, 0);
     });
   };
 
