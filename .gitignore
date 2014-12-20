@@ -68,7 +68,8 @@ config/local.js
 
 node_modules
 bower_components
-assets/js/dependencies
+assets/js/dependencies/*
+!assets/js/dependencies/sails.io.js
 assets/styles/dependencies
 
 
