@@ -2,7 +2,7 @@
  * Created by acidghost on 18/12/14.
  */
 
-var app = angular.module('realtime.guestbook', ['ui.router', 'ui.bootstrap', 'realtime.guestbook.controllers', 'realtime.guestbook.services']);
+var app = angular.module('realtime.guestbook', ['ui.router', 'ui.bootstrap', 'timer', 'realtime.guestbook.controllers', 'realtime.guestbook.services']);
 
 app.config(function($stateProvider, $urlRouterProvider) {
 
